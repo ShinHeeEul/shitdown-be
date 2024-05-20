@@ -58,4 +58,4 @@ jobs:
 
           # Install project dependencies
           npm install --production
-          npm run start
+          npm run start &
