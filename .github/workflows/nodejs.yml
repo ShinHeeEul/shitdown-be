@@ -25,7 +25,6 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-
     - name: Install dependencies
       run: npm ci
 
@@ -52,10 +51,10 @@ jobs:
           # Install Node.js and pm2 on Amazon Linux
           curl -sL https://rpm.nodesource.com/setup_20.x | sudo bash -
           sudo yum install -y nodejs
-
+          sudo npm install -g pm2
           # Navigate to the application directory
           cd /home/ec2-user/your-app-directory
-
           # Install project dependencies
           npm install --production
-          npm run start &
+          # Restart or start the application with pm2
+          pm2 restart all || pm2 start app.js
