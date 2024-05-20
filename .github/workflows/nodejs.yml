@@ -49,9 +49,9 @@ jobs:
         key: ${{ secrets.EC2_KEY }}
         port: 22
         script: |
-          # Install Node.js, npm, and pm2
-          curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-          sudo apt-get install -y nodejs
+          # Install Node.js and pm2 on Amazon Linux
+          curl -sL https://rpm.nodesource.com/setup_20.x | sudo bash -
+          sudo yum install -y nodejs
           sudo npm install -g pm2
 
           # Navigate to the application directory
