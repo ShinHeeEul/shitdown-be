@@ -22,7 +22,7 @@ jobs:
         node-version: 20.11.0
         cache: 'npm'
     - run: npm ci
-    - run: npm run build --if-present
+    - run: npm run build
     
     - name: Copy files via SSH
       uses: appleboy/scp-action@v0.1.1
