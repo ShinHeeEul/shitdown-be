@@ -57,4 +57,5 @@ jobs:
           # Install project dependencies
           npm install --production
           # Restart or start the application with pm2
-          pm2 restart all || pm2 start app.js
+          cd bin
+          pm2 restart all || pm2 start www
